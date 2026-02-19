@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="lovin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="passwordScreen">
+  <h2>Enter Our Special Word 💌</h2>
+  <input type="password" id="passwordInput" placeholder="Secret word">
+  <br>
+  <button onclick="checkPassword()">Unlock</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent" class="hidden">
+
+
+  <!-- Envelope -->
+  <div class="envelope" onclick="openLetter()">
+    <div class="flap"></div>
+  </div>
+
+  <!-- Letter -->
+  <div class="letter hidden" id="letter">
+    <p>
+      TO toshani sharma ❤️<br><br>
+      so like i really like you and love spening my time with you.
+      Really like ur small cute smile tho
+
+      and i know teen relationships are so hard to manage but 
+      i would like to be with you forever, you are my drug
+      <br><br>
+      AM GLAD YOU ARE MY GURLFRIEND
+    </p>
+
+    <button onclick="surprise()">dont die and be with me💍</button>
+    <button onclick="closeLetter()">Close</button>
+  </div>
+
+</div>
+
+<script src="lovin.js"></script>
+</body>
+</html>

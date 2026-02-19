@@ -1,0 +1,183 @@
+/* ---------------- BASE ---------------- */
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+  overflow-x: hidden;
+  transition: 0.5s;
+  background-color: #2d2a2a;
+
+  /* Punk repeating text */
+  background-image: url("data:image/svg+xml,\
+  <svg xmlns='http://www.w3.org/2000/svg' width='180' height='70'>\
+  <text x='5' y='40' font-size='16' fill='rgba(255,0,100,0.15)' font-family='Dancing Script' transform='rotate(-15 90 35)'>LOVE YOU TOSHANI</text>\
+  </svg>");
+  background-repeat: repeat;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------------- PASSWORD ---------------- */
+
+#passwordScreen {
+  text-align: center;
+  color: #ff2e88;
+  text-shadow: 0 0 10px #ff2e88;
+}
+
+input {
+  padding: 12px;
+  border: 2px solid #ff2e88;
+  border-radius: 0;
+  outline: none;
+  font-size: 18px;
+  background: black;
+  color: #ff2e88;
+  width: 250px;
+  max-width: 80vw;
+}
+
+button {
+  padding: 12px 25px;
+  border: 2px solid #ff2e88;
+  border-radius: 0;
+  cursor: pointer;
+  margin-top: 10px;
+  background: black;
+  color: #ff2e88;
+  font-size: 16px;
+  transition: 0.3s;
+  max-width: 80vw;
+}
+
+button:hover {
+  background: #ff2e88;
+  color: black;
+  box-shadow: 0 0 15px #ff2e88;
+}
+
+/* ---------------- CONTROLS ---------------- */
+
+.top-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* ---------------- ENVELOPE ---------------- */
+
+.envelope {
+  width: 260px;
+  height: 170px;
+  max-width: 80vw;
+  background: black;
+  border: 3px solid #ff2e88;
+  position: relative;
+  cursor: pointer;
+  border-radius: 0;
+  box-shadow: 0 0 20px #ff2e88;
+  overflow: visible;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 130px solid transparent;
+  border-right: 130px solid transparent;
+  border-bottom: 85px solid #ff2e88;
+  transition: 0.6s;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+  transform-origin: top;
+}
+
+/* ---------------- LETTER ---------------- */
+
+.letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  max-width: 90vw;
+  background: black;
+  padding: 25px;
+  border: 2px solid #ff2e88;
+  color: #ff2e88;
+  border-radius: 0;
+  text-align: center;
+  animation: slideUp 0.8s ease;
+  box-shadow: 0 0 25px #ff2e88;
+  text-shadow: 0 0 10px #ff2e88;
+  z-index: 10;
+}
+
+@keyframes slideUp {
+  from { transform: translate(-50%, 200px); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+/* ---------------- HEART EXPLOSION ---------------- */
+
+.heart {
+  position: fixed;
+  font-size: 20px;
+  pointer-events: none;
+  animation: explode 1s ease-out forwards;
+  text-shadow: 0 0 10px #ff2e88;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0.5) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8) translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+
+/* ---------------- NIGHT MODE ---------------- */
+
+.night {
+  background-color: #000000;
+
+  background-image: url("data:image/svg+xml,\
+  <svg xmlns='http://www.w3.org/2000/svg' width='180' height='70'>\
+  <text x='5' y='40' font-size='16' fill='rgba(255,0,100,0.08)' font-family='Dancing Script' transform='rotate(-15 90 35)'>LOVE YOU TOSHANI</text>\
+  </svg>");
+  background-repeat: repeat;
+}
+
+/* ---------------- MOBILE RESPONSIVE ---------------- */
+
+@media (max-width: 600px) {
+
+  .envelope {
+    width: 80vw;
+    height: 45vw;
+  }
+
+  .flap {
+    border-left: 40vw solid transparent;
+    border-right: 40vw solid transparent;
+    border-bottom: 22vw solid #ff2e88;
+  }
+
+  .letter {
+    width: 90vw;
+    padding: 20px;
+  }
+
+}
